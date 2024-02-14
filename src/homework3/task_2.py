@@ -7,12 +7,10 @@ def list_1():
 print(list_1())
 
 
-def list_5():
-    list_3 = [str(i) + 'a' for i in range(1, 5)]
-    list_3 = [str(i) + 'a' for i in range(1, 5) if i != 2]
-    list_4 = list_3.copy()
-    list_4.append('2a')
-    return list_3, list_4
-
-
-print(list_5())
+list_3 = [f"{i}a" for i in range(1, 5)]
+removed_item = list_3.pop(1)
+list_4 = list_3.copy()
+list_4.append('2a')
+print(f"Удаленный элемент: {removed_item}")
+print(list_3)
+print(list_4)
