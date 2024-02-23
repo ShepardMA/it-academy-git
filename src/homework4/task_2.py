@@ -1,11 +1,18 @@
 # The Cities
 
 def find_country():
-    motherland = {city: country for _ in range(int(input("Введите количество стран: "))) for country,
-                  *cities in [input("Введите название страны и города через пробел: ").split()] for city in cities}
-    for _ in range(int(input("Введите количество запросов: "))):
-        city_name = input("Введите название города: ")
-        print(motherland.get(city_name, "Город не найден"))
+    motherland = {
+        "moscow": "russia",
+        "petersburg": "russia",
+        "novgorod": "russia",
+        "kaluga": "russia",
+        "kiev": "ukraine",
+        "donetsk": "ukraine",
+        "odessa": "ukraine"}
+    queries = ["moscow", "kiev", "odessa", "paris"]
+    for city_name in queries:
+        country = motherland.get(city_name, "Город не найден")
+        print(f"Город {city_name.capitalize()} находится в стране {country.capitalize()}.")
 
 
 find_country()
